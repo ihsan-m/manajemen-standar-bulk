@@ -6,8 +6,10 @@ export default function Home() {
     <main>
       <h1>Halo Worl</h1>
       <Link href='/auth'>Auth</Link>
-      <></>
-      <Link href='/standar-utama/user-management'>User Management</Link>
+      <h1></h1>
+      {/* <Link href='/standar-utama/user-management'>User Management</Link> */}
+      <h1></h1>
+      <Link href='/main-menu'>Main Menu</Link>
 
     </main>
   )

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
 }
 
@@ -14,4 +14,81 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+} */
+
+:root {
+  --slate-800: #0F172A;
+  --font-feature-settings-common: 'cv04' on, 'cv03' on, 'cv02' on, 'cv11' on, 'clig' off, 'liga' off;
+}
+
+/* Styles for Body P3 */
+.body-p3 {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 18px; /* 150% of 12px */
+  letter-spacing: -0.3px;
+  color: var(--slate-800);
+  font-feature-settings: var(--font-feature-settings-common);
+}
+
+/* Styles for Body P2 */
+.body-p2 {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 21px; /* 150% of 14px */
+  letter-spacing: -0.35px;
+  color: var(--slate-800);
+  font-feature-settings: var(--font-feature-settings-common);
+}
+
+/* Styles for Body P1 */
+.body-p1 {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 36px; /* 150% of 24px */
+  letter-spacing: -0.6px;
+  color: var(--slate-800);
+  font-feature-settings: var(--font-feature-settings-common);
+}
+
+/* Styles for Body B3 */
+.body-b3 {
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 18px; /* 150% of 12px */
+  letter-spacing: -0.3px;
+  color: var(--slate-800);
+  font-feature-settings: var(--font-feature-settings-common);
+}
+
+/* Styles for Body B2 */
+.body-b2 {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 21px; /* 150% of 14px */
+  letter-spacing: -0.35px;
+  color: var(--slate-800);
+  font-feature-settings: var(--font-feature-settings-common);
+}
+
+/* Styles for Body B1 */
+.body-b1 {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 36px; /* 150% of 24px */
+  letter-spacing: -0.6px;
+  color: var(--slate-800);
+  font-feature-settings: var(--font-feature-settings-common);
 }
