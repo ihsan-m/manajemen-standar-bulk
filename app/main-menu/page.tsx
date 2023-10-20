@@ -4,10 +4,10 @@ import TopbarMainMenu from '../components/TopbarMainMenu'
 
 const MainMenu = () => {
   return (
-    <html lang='en'>
+    <main>
       <TopbarMainMenu />
       <div>MainMenu</div>
-    </html>
+    </main>
     
   )
 }
