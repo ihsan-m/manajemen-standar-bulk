@@ -1,5 +1,5 @@
 import React from 'react'
-import TopbarMainMenu from '../components/TopbarMainMenu'
+import TopbarMainMenu from '../components/(Main Menu)/TopbarMainMenu'
 
 
 const MainMenu = () => {

@@ -2,93 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-}
-
-@media (prefers-color-scheme: white) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-} */
-
-:root {
-  --slate-800: #0F172A;
-  --font-feature-settings-common: 'cv04' on, 'cv03' on, 'cv02' on, 'cv11' on, 'clig' off, 'liga' off;
+  @apply font-sans leading-120 tracking--2.5 text-slate-800;
 }
 
-/* Styles for Body P3 */
-.body-p3 {
-  font-family: Inter;
-  font-size: 12px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 18px; /* 150% of 12px */
-  letter-spacing: -0.3px;
-  color: var(--slate-800);
-  font-feature-settings: var(--font-feature-settings-common);
-}
+@layer components {
+  /* Small Button -------------------------------------------------------------------------------------------------------------------------- */
+  .small-button {
+    @apply flex h-[25px] min-w-[70px] items-center justify-center gap-2 rounded-md px-2 text-sm font-medium text-white ring-1 transition-colors;
+  }
 
-/* Styles for Body P2 */
-.body-p2 {
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 21px; /* 150% of 14px */
-  letter-spacing: -0.35px;
-  color: var(--slate-800);
-  font-feature-settings: var(--font-feature-settings-common);
-}
+  .small-button-primary {
+    @apply small-button bg-sky-800 ring-sky-800 hover:bg-sky-50 hover:text-sky-800;
+  }
 
-/* Styles for Body P1 */
-.body-p1 {
-  font-family: Inter;
-  font-size: 24px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 36px; /* 150% of 24px */
-  letter-spacing: -0.6px;
-  color: var(--slate-800);
-  font-feature-settings: var(--font-feature-settings-common);
-}
+  .small-button-secondary {
+    @apply small-button bg-blue-800 ring-blue-800 hover:bg-blue-50 hover:text-blue-800;
+  }
 
-/* Styles for Body B3 */
-.body-b3 {
-  font-family: Inter;
-  font-size: 12px;
-  font-weight: 700;
-  font-style: normal;
-  line-height: 18px; /* 150% of 12px */
-  letter-spacing: -0.3px;
-  color: var(--slate-800);
-  font-feature-settings: var(--font-feature-settings-common);
-}
+  .small-button-orange {
+    @apply small-button bg-orange-500 ring-orange-500 hover:bg-orange-50 hover:text-orange-500;
+  }
 
-/* Styles for Body B2 */
-.body-b2 {
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 700;
-  font-style: normal;
-  line-height: 21px; /* 150% of 14px */
-  letter-spacing: -0.35px;
-  color: var(--slate-800);
-  font-feature-settings: var(--font-feature-settings-common);
-}
+  .small-button-red {
+    @apply small-button bg-red-500  ring-red-500  hover:bg-red-50 hover:text-red-500;
+  }
 
-/* Styles for Body B1 */
-.body-b1 {
-  font-family: Inter;
-  font-size: 24px;
-  font-weight: 700;
-  font-style: normal;
-  line-height: 36px; /* 150% of 24px */
-  letter-spacing: -0.6px;
-  color: var(--slate-800);
-  font-feature-settings: var(--font-feature-settings-common);
+  .small-button-grey {
+    @apply small-button bg-slate-700  ring-slate-700  hover:bg-red-50 hover:text-slate-700;
+  }
+
+  /* Large Button -------------------------------------------------------------------------------------------------------------------------- */
+  .large-button {
+    @apply flex h-[40px] min-w-[140px] items-center justify-center gap-2 rounded-md px-2 font-medium text-white ring-1 transition-colors;
+  }
+
+  .large-button-primary {
+    @apply large-button bg-sky-800 text-white ring-1 ring-sky-800 hover:bg-sky-50 hover:text-sky-800;
+  }
+
+  .large-button-secondary {
+    @apply large-button bg-blue-800 text-white ring-1 ring-blue-800 hover:bg-blue-50 hover:text-blue-800;
+  }
+
+  .large-button-secondary-inactive {
+    @apply large-button bg-blue-300 text-white;
+  }
+
+  .large-button-tertiary {
+    @apply large-button bg-sky-500 text-white ring-1 ring-sky-500 hover:bg-sky-50 hover:text-sky-500;
+  }
+
+  .large-button-recall {
+    @apply large-button bg-white text-blue-800 ring-1 ring-blue-800 hover:bg-blue-50;
+  }
+
+  /* Status Standar -------------------------------------------------------------------------------------------------------------------------- */
+  .status{
+    @apply uppercase flex min-w-[75px] items-center justify-center gap-2  px-2 py-1 text-sm font-bold
+  }
+
+  .status-inactive {
+    @apply status rounded-3xl font-bold text-gray-600 bg-gray-200 border-2;
+  }
+
+  .status-active {
+    @apply status rounded-3xl font-bold text-green-600 bg-green-200 border-2 border-green-200;
+  }
+
+  .status-waiting-for-review {
+    @apply status rounded-3xl font-bold text-yellow-600 bg-yellow-200 border-2 border-yellow-200;
+  }
+
+  .status-on-review {
+    @apply status rounded-3xl font-bold text-orange-600 bg-orange-200 border-2 border-orange-200;
+  }
+
+  .status-expired {
+    @apply status text-white bg-red-500 border-2 border-red-500;
+  }
+
+  .status-obsolete {
+    @apply status text-white bg-gray-600 border-2 border-gray-600;
+  }
+
+  /* Jenis Standar -------------------------------------------------------------------------------------------------------------------------- */
+  .jenis {
+    @apply flex w-[120px] items-center justify-center py-1 text-sm font-bold rounded-3xl;
+  }
+  .jenis-performance {
+    @apply jenis text-slate-600 bg-white ring-2 ring-slate-600;
+  }
+  .jenis-olesan {
+    @apply jenis text-white bg-slate-600 border-2 border-slate-600;
+  }
+
+  /* Notification -------------------------------------------------------------------------------------------------------------------------- */
 }
