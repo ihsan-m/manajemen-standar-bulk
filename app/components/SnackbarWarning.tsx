@@ -1,22 +1,29 @@
 import { AiFillWarning } from "react-icons/ai";
 import { useState, useEffect } from "react";
 
-export default function SnackbarWarning({
+type SnackbarProps = {
+  message: string;
+  timer: number;
+  setShowSnackbar: (show: boolean) => void;
+};
+
+const SnackbarWarning: React.FC<SnackbarProps> = ({
   message,
   timer,
   setShowSnackbar,
-}) {
+}) => {
   const [countdown, setCountdown] = useState(timer);
 
   useEffect(() => {
     if (countdown > 0) {
-      setTimeout(() => {
+      const timerId = setTimeout(() => {
         setCountdown(countdown - 1);
       }, 1000);
+      return () => clearTimeout(timerId); // Clear the timeout if the component unmounts
     } else {
       setShowSnackbar(false);
     }
-  }, [countdown]);
+  }, [countdown, setShowSnackbar]);
 
   return (
     <>
@@ -29,7 +36,12 @@ export default function SnackbarWarning({
           <div className="flex items-center mb-2 space-x-2">
             <AiFillWarning className="text-yellow-700" />
             <h3 className="font-semibold">Warning!</h3>
-            <button onClick={() => setShowSnackbar(false)} className="text-yellow-500 hover:ring-2 ring-yellow-500">Closes in {countdown} ...</button>
+            <button
+              onClick={() => setShowSnackbar(false)}
+              className="text-yellow-500 hover:ring-2 ring-yellow-500"
+            >
+              Closes in {countdown} ...
+            </button>
           </div>
         </div>
         <p className="flex justify-start ml-6">{message}</p>
@@ -37,4 +49,5 @@ export default function SnackbarWarning({
       {/* END Alerts: Success */}
     </>
   );
-}
+};
+export default SnackbarWarning;

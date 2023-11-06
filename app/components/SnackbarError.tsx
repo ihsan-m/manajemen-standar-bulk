@@ -1,22 +1,29 @@
 import { BiErrorAlt } from "react-icons/bi";
 import { useState, useEffect } from "react";
 
-export default function SnackbarError({
+type SnackbarProps = {
+  message: string;
+  timer: number;
+  setShowSnackbar: (show: boolean) => void;
+};
+
+const SnackbarError: React.FC<SnackbarProps> = ({
   message,
   timer,
   setShowSnackbar,
-}) {
+}) => {
   const [countdown, setCountdown] = useState(timer);
 
   useEffect(() => {
     if (countdown > 0) {
-      setTimeout(() => {
+      const timerId = setTimeout(() => {
         setCountdown(countdown - 1);
       }, 1000);
+      return () => clearTimeout(timerId); // Clear the timeout if the component unmounts
     } else {
       setShowSnackbar(false);
     }
-  }, [countdown]);
+  }, [countdown, setShowSnackbar]);
 
   return (
     <>
@@ -29,7 +36,12 @@ export default function SnackbarError({
           <div className="flex items-center mb-2 space-x-2">
             <BiErrorAlt className="text-red-700" />
             <h3 className="font-semibold">Error!</h3>
-            <button onClick={() => setShowSnackbar(false)} className="text-red-500 hover:ring-2 ring-red-500">Closes in {countdown} ...</button>
+            <button
+              onClick={() => setShowSnackbar(false)}
+              className="text-red-500 hover:ring-2 ring-red-500"
+            >
+              Closes in {countdown} ...
+            </button>
           </div>
         </div>
         <p className="flex justify-start ml-6">{message}</p>
@@ -37,4 +49,5 @@ export default function SnackbarError({
       {/* END Alerts: Success */}
     </>
   );
-}
+};
+export default SnackbarError;

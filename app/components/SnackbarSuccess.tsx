@@ -1,22 +1,29 @@
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { useState, useEffect } from "react";
 
-export default function SnackbarSuccess({
+type SnackbarProps = {
+  message: string;
+  timer: number;
+  setShowSnackbar: (show: boolean) => void;
+};
+
+const SnackbarSuccess: React.FC<SnackbarProps> = ({
   message,
   timer,
   setShowSnackbar,
-}) {
+}) => {
   const [countdown, setCountdown] = useState(timer);
 
   useEffect(() => {
     if (countdown > 0) {
-      setTimeout(() => {
+      const timerId = setTimeout(() => {
         setCountdown(countdown - 1);
       }, 1000);
+      return () => clearTimeout(timerId); // Clear the timeout if the component unmounts
     } else {
       setShowSnackbar(false);
     }
-  }, [countdown]);
+  }, [countdown, setShowSnackbar]);
 
   return (
     <>
@@ -38,3 +45,4 @@ export default function SnackbarSuccess({
     </>
   );
 }
+export default SnackbarSuccess;
