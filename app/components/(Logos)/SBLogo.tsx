@@ -2,8 +2,8 @@ const SBLogo = () => {
   return (
     <>
       <svg
-        width="274"
-        height="376"
+        width="auto"
+        height="400"
         viewBox="0 0 274 376"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

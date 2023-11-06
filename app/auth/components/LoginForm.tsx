@@ -1,33 +1,55 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import SnackbarSuccess from "../../components/SnackbarSuccess";
-
+import SnackbarWarning from "../../components/SnackbarWarning";
+import SnackbarError from "../../components/SnackbarError";
+import { AiFillEye } from "react-icons/ai";
+import { AiFillEyeInvisible } from "react-icons/ai";
 
 // TODO :
 // - Apply Backend Logic
 // - Apply Snackbars for Negative Scenario
 
 const LoginForm = () => {
-  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [showSuccessSnackbar, setShowSuccessSnackbar] = useState(false);
+  const [showWarningSnackbar, setShowWarningSnackbar] = useState(false);
+  const [ShowErrorSnackbar, setShowErrorSnackbar] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleClick = () => {
-    // Show the snackbar
-    setShowSnackbar(true);
-
-    // After 10 seconds, hide the snackbar
-    setTimeout(() => {
-      setShowSnackbar(false);
-    }, 10000); // 10000 milliseconds = 30 seconds
+  const handlePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
+
+  const handleSuccessClick = () => {
+    setShowSuccessSnackbar(true);
+    setTimeout(() => {
+      setShowSuccessSnackbar(false);
+    }, 15000);
+  };
+
+  const handleWarningClick = () => {
+    setShowWarningSnackbar(true);
+    setTimeout(() => {
+      setShowWarningSnackbar(false);
+    }, 15000);
+  };
+
+  const handleErrorClick = () => {
+    setShowErrorSnackbar(true);
+    setTimeout(() => {
+      setShowErrorSnackbar(false);
+    }, 15000);
+  };
+
   return (
     <>
       {/* Login Form */}
-      <div className="p-10 flex flex-col rounded-lg bg-slate-50 overflow-hidden shadow-xl">
+      <div className="min-w-[400px] max-w-[600px] w-full p-10 flex flex-col rounded-lg bg-slate-50 shadow-xl">
+        <div className="text-center text-2xl font-bold text-slate-600 pb-4">
+          <p>Selamat Datang di </p>
+          <p className="text-sky-700">Manajemen Standar Bulk</p>
+        </div>
         <form className="space-y-6">
-          <div className="text-center text-2xl font-bold text-slate-600">
-            <p>Selamat Datang di</p>
-            <p className="text-sky-700">Manajemen Standar Bulk</p>
-          </div>
           <div className="space-y-1">
             <label htmlFor="email" className="text-sm font-medium">
               Email
@@ -37,20 +59,33 @@ const LoginForm = () => {
               id="email"
               name="email"
               placeholder="Enter your email"
-              className="text-sm w-[500px] block border placeholder-gray-500 px-3 py-3 rounded-lg border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+              className="text-sm w-full block border placeholder-gray-500 px-3 py-3 rounded-lg border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
             />
           </div>
           <div className="space-y-1">
             <label htmlFor="password" className="text-sm font-medium">
               Password
             </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              className="text-sm w-[500px] block border placeholder-gray-500 px-3 py-3 rounded-lg border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                className="text-sm w-full block border placeholder-gray-500 px-3 py-3 rounded-lg border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+              />
+              {showPassword ? (
+                <AiFillEye
+                  onClick={handlePasswordVisibility}
+                  className="text-xl absolute right-5 bottom-3 text-gray-600"
+                />
+              ) : (
+                <AiFillEyeInvisible
+                  onClick={handlePasswordVisibility}
+                  className="text-xl absolute right-5 bottom-3 text-gray-600"
+                />
+              )}
+            </div>
           </div>
           <div className="flex items-center justify-between space-x-2 mb-5">
             <label className="flex items-center">
@@ -87,20 +122,45 @@ const LoginForm = () => {
         <a
           href="#"
           className="font-medium text-green-300 hover:text-green-500 "
-          onClick={handleClick} // Add click handler here
+          onClick={handleSuccessClick} // Add click handler here
         >
           Success{" "}
         </a>
-        {showSnackbar && <SnackbarSuccess/>}
+        {showSuccessSnackbar && (
+          <SnackbarSuccess
+            message="Berhasil Masuk!"
+            timer={15}
+            setShowSnackbar={setShowSuccessSnackbar}
+          />
+        )}
         <a
           href="#"
           className="font-medium text-yellow-300 hover:text-yellow-500"
+          onClick={handleWarningClick} // Add click handler here
         >
           Warning{" "}
         </a>
-        <a href="#" className="font-medium text-red-300 hover:text-red-500">
+        {showWarningSnackbar && (
+          <SnackbarWarning
+            message="Masukkan Email/Password PTI yang benar!"
+            timer={15}
+            setShowSnackbar={setShowWarningSnackbar}
+          />
+        )}
+        <a
+          href="#"
+          className="font-medium text-red-300 hover:text-red-500"
+          onClick={handleErrorClick}
+        >
           Error{" "}
         </a>
+        {ShowErrorSnackbar && (
+          <SnackbarError
+            message="Tidak dapat masuk, #input error message"
+            timer={15}
+            setShowSnackbar={setShowErrorSnackbar}
+          />
+        )}
       </div>
     </>
   );
