@@ -1,16 +1,17 @@
 "use client";
 import { useState } from "react";
-import LoginForm from "./LoginForm";
-import EmailSuccessCard from "./EmailSuccessCard";
 import SnackbarSuccess from "../../components/SnackbarSuccess";
 import SnackbarWarning from "../../components/SnackbarWarning";
 import SnackbarError from "../../components/SnackbarError";
 
-const ForgotPasswordForm = () => {
+type Props = {
+    setForm: (form: string) => void;
+  };
+
+const ForgotPasswordForm = ({ setForm }: Props) => {
   const [showSuccessSnackbar, setShowSuccessSnackbar] = useState(false);
   const [showWarningSnackbar, setShowWarningSnackbar] = useState(false);
   const [ShowErrorSnackbar, setShowErrorSnackbar] = useState(false);
-  const [form, setForm] = useState("forgotPassword");
 
   const handleEmailSuccessClick = () => {
     setForm("emailSuccess");
@@ -42,12 +43,6 @@ const handleErrorClick = () => {
 
   return (
       <>
-      {/* Login Form */}
-      {form === "login" && <LoginForm />}
-      {/* Success Card */}
-      {form === "emailSuccess" && <EmailSuccessCard />}
-      {/* Forgot Password Form */}
-      {form === "forgotPassword" && (
         <div className="flex flex-col w-full items-center ">
           <div className="min-w-[400px] max-w-[600px] h-[450px] w-full p-10 flex flex-col justify-center rounded-lg bg-slate-50 shadow-xl">
             <div className="text-center text-2xl font-bold text-slate-600 pb-4 ">
@@ -137,7 +132,6 @@ const handleErrorClick = () => {
             )}
           </div>
         </div>
-      )}
     </>
   );
 };

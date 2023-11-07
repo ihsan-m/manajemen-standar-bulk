@@ -10,17 +10,20 @@ import ForgotPasswordForm from "./ForgotPasswordForm";
 // TODO :
 // - Apply Backend Logic
 // - Apply Snackbars for Negative Scenario
+type Props = {
+  setForm: (form: string) => void;
+};
 
-const LoginForm = () => {
+const LoginForm = ({ setForm }: Props) => {
   const [showSuccessSnackbar, setShowSuccessSnackbar] = useState(false);
   const [showWarningSnackbar, setShowWarningSnackbar] = useState(false);
   const [ShowErrorSnackbar, setShowErrorSnackbar] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [form, setForm] = useState("login");
-
+  
   const handleForgotPasswordClick = () => {
     setForm("forgotPassword");
   };
+
 
   const handlePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -49,10 +52,6 @@ const LoginForm = () => {
 
   return (
     <>
-      {/* Forgot Password Form */}
-      {form === "forgotPassword" && <ForgotPasswordForm />}
-      {/* Login Form */}
-      {form === "login" && (
         <div className="flex flex-col w-full items-center ">
           <div className="min-w-[400px] max-w-[600px] h-[450px] w-full p-10 flex flex-col justify-center rounded-lg bg-slate-50 shadow-xl">
             <div className="text-center text-2xl font-bold text-slate-600 pb-4">
@@ -175,7 +174,6 @@ const LoginForm = () => {
             )}
           </div>
         </div>
-      )}
     </>
   );
 };
