@@ -33,8 +33,8 @@ const SBLogo = () => {
             y2="271.466"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#005487" />
-            <stop offset="1" stop-color="#63ADD1" />
+            <stop stopColor="#005487" />
+            <stop offset="1" stopColor="#63ADD1" />
           </linearGradient>
         </defs>
       </svg>
