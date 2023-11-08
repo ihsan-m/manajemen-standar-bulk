@@ -2,9 +2,9 @@ const TopBarLogo = () => {
   return (
     <>
       <svg
-        width="300"
-        height="69"
-        viewBox="0 0 367 69"
+        width="auto"
+        height="auto"
+        viewBox="0 0 400 70"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
