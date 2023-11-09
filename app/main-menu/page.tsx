@@ -1,14 +1,21 @@
 "use client";
+import { useEffect, useState } from "react";
 import TopbarMainMenu from "../components/(Main Menu)/TopbarMainMenu";
 
 
 const MainMenu = () => {
+  const [title, setTitle] = useState("Main Menu | MSB");
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]); // This effect will re-run whenever the title state changes
+  
   return (
-    <main className=" mx-auto w-full min-h-screen min-w-[320px] bg-slate-50">
+    <main className="pt-[90px] mx-auto w-full min-h-screen min-w-[320px] bg-slate-50 mb-20">
       <TopbarMainMenu />
-      <div className="flex flex-row w-full justify-center space-x-4">
+      <div className="flex flex-col w-full justify-center items-center space-y-3 md:space-x-4 md:flex-row ">
         {/* Standar Utama Card*/}
-        <div className="flex flex-col w-[350px] h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
+        <div className="flex flex-col w-[300px] h-[350px] md:w-[350px] md:h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
           <div className="space-y-4 w-full">
             <div className="flex w-full items-center justify-center rounded-xl py-16 border-2 border-solid border-white shadow-md bg-gradient-to-r from-sky-100 to-sky-800">
               <p className="text-4xl font-bold text-white text-center [text-shadow:0px_4px_4px_#00000040]">
@@ -22,7 +29,7 @@ const MainMenu = () => {
           </button>
         </div>
         {/* Standar Toleransi Card */}
-        <div className="flex flex-col w-[350px] h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
+        <div className="flex flex-col w-[300px] h-[350px] md:w-[350px] md:h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
           <div className="space-y-4 w-full">
             <div className="flex w-full items-center justify-center rounded-xl py-16 border-2 border-solid border-white shadow-md bg-gradient-to-r from-pink-200 to-pink-800">
               <p className="text-4xl font-bold text-white text-center [text-shadow:0px_4px_4px_#00000040]">
@@ -38,7 +45,7 @@ const MainMenu = () => {
           </button>
         </div>
         {/* Spesifikasi Produk Ruahan Card */}
-        <div className="flex flex-col w-[350px] h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
+        <div className="flex flex-col w-[300px] h-[350px] md:w-[350px] md:h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
           <div className="space-y-4 w-full">
             <div className="flex w-full items-center justify-center rounded-xl py-16 border-2 border-solid border-white shadow-md bg-gradient-to-r from-violet-200 to-violet-800">
               <p className="text-4xl font-bold text-white text-center [text-shadow:0px_4px_4px_#00000040]">
@@ -54,7 +61,7 @@ const MainMenu = () => {
           </button>
         </div>
         {/* Bill of Standar Card */}
-        <div className="flex flex-col w-[350px] h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
+        <div className="flex flex-col w-[300px] h-[350px] md:w-[350px] md:h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
           <div className="space-y-4 w-full">
             <div className="flex w-full items-center justify-center rounded-xl py-16 border-2 border-solid border-white shadow-md bg-gradient-to-r from-amber-200 to-amber-800">
               <p className="text-4xl font-bold text-white text-center [text-shadow:0px_4px_4px_#00000040]">

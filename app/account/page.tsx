@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillEye } from "react-icons/ai"; // untuk viewer
 import { HiOutlineComputerDesktop } from "react-icons/hi2"; // untuk Super Admin
 import { HiOutlineBeaker } from "react-icons/hi2"; // untuk Formulator
@@ -14,6 +14,11 @@ import { useRouter } from "next/navigation";
 
 const Account = () => {
   const router = useRouter();
+  const [title, setTitle] = useState("Akun | MSB");
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   return (
     <main className="flex justify-center">
