@@ -10,7 +10,7 @@ const MainMenu = () => {
         {/* Standar Utama Card*/}
         <div className="flex flex-col w-[350px] h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
           <div className="space-y-4 w-full">
-            <div className="flex w-full items-center justify-center rounded-md py-16 border-2 border-solid border-white shadow-lg bg-gradient-to-r from-sky-200 to-sky-800">
+            <div className="flex w-full items-center justify-center rounded-md py-16 border-2 border-solid border-white shadow-lg bg-gradient-to-r from-sky-100 to-sky-800">
               <p className="text-4xl font-extrabold text-white text-center [text-shadow:0px_4px_4px_#00000040]">
                 STU
               </p>
@@ -24,7 +24,7 @@ const MainMenu = () => {
         {/* Standar Toleransi Card */}
         <div className="flex flex-col w-[350px] h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
           <div className="space-y-4 w-full">
-            <div className="flex w-full items-center justify-center rounded-md py-16 border-2 border-solid border-white shadow-lg bg-gradient-to-r from-pink-200 to-pink-800">
+            <div className="flex w-full items-center justify-center rounded-md py-16 border-2 border-solid border-white shadow-lg bg-gradient-to-r from-pink-100 to-pink-800">
               <p className="text-4xl font-extrabold text-white text-center [text-shadow:0px_4px_4px_#00000040]">
                 STR
               </p>
@@ -40,7 +40,7 @@ const MainMenu = () => {
         {/* Spesifikasi Produk Ruahan Card */}
         <div className="flex flex-col w-[350px] h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
           <div className="space-y-4 w-full">
-            <div className="flex w-full items-center justify-center rounded-md py-16 border-2 border-solid border-white shadow-lg bg-gradient-to-r from-violet-200 to-violet-800">
+            <div className="flex w-full items-center justify-center rounded-md py-16 border-2 border-solid border-white shadow-lg bg-gradient-to-r from-violet-100 to-violet-800">
               <p className="text-4xl font-extrabold text-white text-center [text-shadow:0px_4px_4px_#00000040]">
                 SPR
               </p>
