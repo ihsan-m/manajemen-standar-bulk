@@ -49,11 +49,11 @@ const WarningModal: React.FC<ModalProps> = ({
               >
                 <Dialog.Panel className="w-full max-w-md transform rounded-2xl p-10 bg-white shadow-xl transition-all">
                   <AiOutlineWarning className="w-full text-[200px] justify-center text-orange-500"/>
-                  <p className="text-center text-lg font-bold leading-6 text-slate-600">
+                  <p className="text-center text-lg font-bold leading-6 text-slate-700">
                   {message1}
                   </p>
                   <div className="mt-2">
-                    <p className="text-center text-sm text-slate-600 w-full">
+                    <p className="text-center text-sm text-slate-700 w-full">
                       {message2}
                     </p>
                   </div>
