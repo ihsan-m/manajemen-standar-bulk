@@ -7,6 +7,11 @@ body {
 }
 
 @layer components {
+  /* Formz -------------------------------------------------------------------------------------------------------------------------- */
+  .input-form {
+    @apply truncate h-auto w-full text-sm border px-3 py-3 rounded-md border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 disabled:bg-sky-100 disabled:text-sky-700 disabled:border-sky-700;
+  }
+
   /* Small Button -------------------------------------------------------------------------------------------------------------------------- */
   .small-button {
     @apply flex h-[25px] min-w-[70px] items-center justify-center gap-2 rounded-md px-2 text-sm font-medium text-white ring-1 transition-colors;

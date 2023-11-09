@@ -13,6 +13,7 @@ import { HiOutlineGiftTop } from "react-icons/hi2"; // untuk Produksi
 import { HiOutlinePresentationChartLine } from "react-icons/hi2"; // untuk RND Proses
 import WarningModal from "../WarningModal";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 // TODO Implement Mekanisme if role / departemen -> pakai logo yg sesuai
 
@@ -33,7 +34,7 @@ const TopbarMainMenu = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between space-x-2 mb-5 px-5 py-2 h-[80px] bg-slate-50 shadow-xl border-b-2">
+    <nav className="flex items-center justify-between space-x-2 mb-5 px-5 py-2 h-[80px] bg-slate-50 drop-shadow-md border-b-2">
       <div className="flex h-full w-full">
         <div>
           <TopBarLogo />
@@ -44,22 +45,22 @@ const TopbarMainMenu = () => {
           <HiOutlineArrowRightOnRectangle className="text-2xl" />
           Log Out
         </button>
-        <a
+        <Link
           href="/account"
           className="group flex items-center space-x-2 hover:scale-95 transition-transform"
         >
-          <AiFillEye className="text-sky-600 text-2xl group-hover:text-sky-500" />
+          <HiOutlineComputerDesktop className="text-sky-800 text-2xl group-hover:text-sky-600" />
           <p>
-            <span className="text-sky-600 text-sm font-bold group-hover:text-sky-500">
-              Fadlah
+            <span className="text-sky-800 text-sm font-bold group-hover:text-sky-600">
+              Ayu Dwi Lestari Widianingrum
               <br />
             </span>
-            <span className="text-sky-600 text-sm group-hover:text-sky-500">
-              Viewer
+            <span className="text-sky-800 text-sm group-hover:text-sky-600">
+              Super Admin
             </span>
           </p>
-          <BiSolidUserCircle className="text-sky-600 text-2xl group-hover:text-sky-500" />
-        </a>
+          <BiSolidUserCircle className="text-sky-800 text-2xl group-hover:text-sky-600" />
+        </Link>
       </div>
       {/* TODO Apply Logout Logic here if needed */}
       <WarningModal
