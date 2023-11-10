@@ -35,12 +35,12 @@ const TopbarMainMenu = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between space-x-2 mb-5 px-5 py-2 h-[80px] bg-slate-50 drop-shadow-md border-b-2">
-      <div className="flex h-full w-full">
+      <div className="md:flex h-full w-full hidden">
         <div>
           <TopBarLogo />
         </div>
       </div>
-      <div className="inline-flex justify-end items-center h-full w-full space-x-3">
+      <div className="md:justify-end inline-flex justify-center items-center h-full w-full space-x-3">
         <button className="large-button-red" onClick={openModal}>
           <HiOutlineArrowRightOnRectangle className="text-2xl" />
           Log Out

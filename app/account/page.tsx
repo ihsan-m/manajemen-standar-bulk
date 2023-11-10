@@ -24,7 +24,7 @@ const Account = () => {
     <main className="flex justify-center">
       <section className="w-full h-[270px] rounded-b-3xl bg-gradient-to-b from-sky-950 to-sky-500" />
       {/* Account Card */}
-      <div className="absolute max-w-[900px] w-full space-x-5 md:flex items-start justify-center px-10 py-16 top-20 bg-white rounded-2xl border border-gray-600">
+      <div className="absolute max-w-[900px] w-full md:space-x-5 md:flex items-start justify-center px-10 py-16 top-14 bg-white rounded-2xl border border-gray-600">
         <HiOutlineComputerDesktop className="w-full h-[100px] md:w-[300px] md:h-[300px] text-sky-800" />
         <div className="space-y-5 max-w-[600px] w-full">
           <button

@@ -11,7 +11,7 @@ const MainMenu = () => {
   }, [title]); // This effect will re-run whenever the title state changes
   
   return (
-    <main className="pt-[90px] mx-auto w-full min-h-screen min-w-[320px] bg-slate-50 mb-20">
+    <main className="pt-[90px] mx-auto w-full min-h-screen min-w-[320px] bg-slate-50 pb-20">
       <TopbarMainMenu />
       <div className="flex flex-col w-full justify-center items-center space-y-3 md:space-x-4 md:flex-row ">
         {/* Standar Utama Card*/}
