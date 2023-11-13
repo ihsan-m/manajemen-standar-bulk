@@ -5,10 +5,10 @@ export default function STULayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <SidebarSTU />
-      <div className="flex grow flex-col">
+      {/* <div className="flex grow flex-col">
         <TopbarSTU />
         {children}
-      </div>
+      </div> */}
     </>
   );
 }
