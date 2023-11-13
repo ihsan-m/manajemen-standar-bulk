@@ -1,14 +1,10 @@
 import TopbarSTU from "../../components/(STU)/TopbarSTU";
 import SidebarSTU from "../../components/(STU)/SidebarSTU";
 
-export default function STULayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function STULayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <SidebarSTU/>
+      <SidebarSTU />
       <div className="flex grow flex-col">
         <TopbarSTU />
         {children}

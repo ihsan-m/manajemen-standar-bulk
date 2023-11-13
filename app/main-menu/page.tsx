@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import TopbarMainMenu from "../components/(Main Menu)/TopbarMainMenu";
+import Link from "next/link";
 
 
 const MainMenu = () => {
@@ -24,9 +25,9 @@ const MainMenu = () => {
             </div>
             <p className="text-2xl font-bold text-sky-700">Standar Utama</p>
           </div>
-          <button className="transition-colors w-full inline-flex justify-center items-center border font-semibold rounded-md py-2 border-sky-700 bg-sky-700 text-white hover:text-white hover:bg-sky-600 focus:ring focus:ring-sky-400 focus:ring-opacity-50 active:bg-sky-700 active:border-sky-700">
+          <Link href={"standar-utama/main-dashboard"} className="transition-colors w-full inline-flex justify-center items-center border font-semibold rounded-md py-2 border-sky-700 bg-sky-700 text-white hover:text-white hover:bg-sky-600 focus:ring focus:ring-sky-400 focus:ring-opacity-50 active:bg-sky-700 active:border-sky-700">
             Buka
-          </button>
+          </Link>
         </div>
         {/* Standar Toleransi Card */}
         <div className="flex flex-col w-[300px] h-[350px] md:w-[350px] md:h-[400px] px-5 py-5 relative bg-white rounded-xl shadow-xl hover:shadow-2xl justify-between">
