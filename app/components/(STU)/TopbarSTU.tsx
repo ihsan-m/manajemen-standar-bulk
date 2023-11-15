@@ -20,7 +20,7 @@ const TopbarSTU = () => {
   const router = useRouter();
 
   return (
-    <nav className="flex h-[80px] shrink-0 items-center justify-between space-x-2 px-5 py-2 bg-sky-700 drop-shadow-md border-b-2 border-slate-300 ">
+    <nav className="flex h-[70px] shrink-0 items-center justify-between space-x-2 px-5 py-2 bg-sky-700 drop-shadow-md border-b border-slate-300 ">
       <div className="md:flex h-full w-full hidden">
         <p className="w-[250px] flex items-center font-medium text-md text-slate-50">
           Manajemen Standar Utama
