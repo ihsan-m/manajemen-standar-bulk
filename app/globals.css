@@ -55,7 +55,7 @@ body {
 
   /* Large Button -------------------------------------------------------------------------------------------------------------------------- */
   .large-button {
-    @apply flex h-[35px] min-w-[125px] items-center justify-center gap-2 rounded-sm px-2 font-medium text-white ring-1 transition-colors text-sm;
+    @apply flex h-[35px] min-w-[100px] items-center justify-center gap-2 rounded-md px-2 text-white ring-1 transition-colors text-xs font-medium;
   }
 
   .large-button-primary {
@@ -74,11 +74,13 @@ body {
     @apply large-button bg-white text-blue-800 ring-1 ring-blue-800 hover:bg-blue-50;
   }
 
-
   .large-button-tertiary {
     @apply large-button bg-sky-500 text-white ring-1 ring-sky-500 hover:bg-sky-50 hover:text-sky-500;
   }
 
+  .large-button-gray {
+    @apply large-button bg-gray-700 text-white ring-1 ring-gray-700 hover:bg-gray-50 hover:text-gray-700;
+  }
 
   .large-button-red {
     @apply large-button bg-red-500 text-white hover:text-red-500 ring-1 ring-red-500 hover:bg-red-50;
@@ -98,7 +100,7 @@ body {
 
   /* Status Standar -------------------------------------------------------------------------------------------------------------------------- */
   .status{
-    @apply uppercase flex min-w-[75px] items-center justify-center gap-2  px-2 py-1 text-sm font-bold
+    @apply uppercase flex min-w-[75px] items-center justify-center gap-2  px-2 py-0.5 text-xs font-semibold
   }
 
   .status-inactive {
