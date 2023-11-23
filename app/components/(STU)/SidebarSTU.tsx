@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { TbLayoutSidebarRightExpand } from "react-icons/tb";
 import { MdTab } from "react-icons/md";
-import { BsBoxes } from "react-icons/bs";
+import { HiMiniTableCells } from 'react-icons/hi2'
 import { HiOutlineInboxArrowDown } from "react-icons/hi2";
 import { MdOutlineAssignmentReturn } from "react-icons/md";
 import { HiUsers } from "react-icons/hi2";
@@ -83,7 +83,7 @@ const SidebarSTU = () => {
             }`}
             href="/standar-utama/internal-management"
           >
-            <BsBoxes className="text-2xl" />
+            <HiMiniTableCells className="text-2xl" />
             <span className={`${isButtonToggled ? "hidden" : "text-sm font-bold"}`}>
               Internal Management
             </span>
